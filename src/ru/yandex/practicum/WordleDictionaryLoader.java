@@ -9,7 +9,6 @@ import java.io.PrintWriter;
 public class WordleDictionaryLoader {
 
     public static WordleDictionary load(String path, PrintWriter logger) throws IOException {
-
         WordleDictionary dict = new WordleDictionary(logger);
 
         try (BufferedReader reader = new BufferedReader(

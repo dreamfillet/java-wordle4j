@@ -10,6 +10,7 @@ public class WordleGame {
     private String answer; //загаданное слово
     private int stepsMade; //количество сделанных попыток
     private int stepsLeft;
+
     public int getStepsLeft() {
         return maxSteps - stepsMade;
     }
@@ -80,7 +81,6 @@ public class WordleGame {
                 continue;
             }
 
-
             // Ищем эту букву в загаданном слове
             for (int j = 0; j < 5; j++) {
                 if (guesses[i] == answers[j] && i != j && !usedInAnswer[j]) {
@@ -88,7 +88,6 @@ public class WordleGame {
                     usedInAnswer[j] = true;
                     break;
                 }
-
             }
         }
         String resultAnswer = new String(result);
@@ -106,7 +105,6 @@ public class WordleGame {
     public String getAnswer() {
         return answer;
     }
-
 
     public String getHint() {
         return dictionary.getRandomWord();

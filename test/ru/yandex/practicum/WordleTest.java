@@ -33,7 +33,7 @@ class WordleTest {
         game = new WordleGame(dictionary, logger, "топор");
     }
 
-   @Test
+    @Test
     void testSimpleWin() {
 
         String feedback = game.checkWord("топор");
@@ -45,7 +45,7 @@ class WordleTest {
         assertTrue(game.isGameOver(), "Игра должна завершиться");
     }
 
-      @Test
+    @Test
     void testSimpleWrongWord1() {
         String feedback = game.checkWord("банан");
 

@@ -34,7 +34,7 @@ public class Wordle {
 
                 if (correctedWord.isEmpty()) {
                     String hint = game.getHint();
-                    if (hint != null ) {
+                    if (hint != null) {
                         System.out.println("Попробуйте слово '" + hint + "'");
                     } else {
                         System.out.println("Словарь пуст, не могу дать подсказку.");
@@ -75,14 +75,14 @@ public class Wordle {
             System.err.println("Не удалось создать лог-файл!");
             e.printStackTrace();
         } finally {
-           scanner.close();
+            scanner.close();
             if (logger != null) logger.close();
         }
 
 
     }
 
-    public static void hello(){
+    public static void hello() {
         System.out.println("Правила подсказок:");
         System.out.println("Вводится слово ровно из 5 букв.");
         System.out.println("- '+' : буква есть и стоит на своём месте");

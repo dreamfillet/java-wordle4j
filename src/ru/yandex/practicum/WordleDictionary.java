@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class WordleDictionary {
-
     private final List<String> words = new ArrayList<>();
-
     private final PrintWriter logger;
 
     WordleDictionary(PrintWriter logger) {
@@ -52,6 +50,4 @@ public class WordleDictionary {
         }
         return true;
     }
-
-
 }
