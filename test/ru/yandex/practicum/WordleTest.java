@@ -25,6 +25,7 @@ class WordleTest {
         dictionary = new WordleDictionary(null);
         dictionary.addWord("топор");
         dictionary.addWord("банан");
+        dictionary.addWord("ропот");
 
         StringWriter writer = new StringWriter();
         logger = new PrintWriter(writer);
@@ -45,11 +46,30 @@ class WordleTest {
     }
 
       @Test
-    void testSimpleWrongWord() {
+    void testSimpleWrongWord1() {
         String feedback = game.checkWord("банан");
 
         assertEquals("-----", feedback, "Ожидание при неправильном слове");
 
 
+    }
+
+    @Test
+    void testSimpleWrongWord2() {
+        String feedback = game.checkWord("ропот");
+        assertEquals("^+++^", feedback, "Ожидание при неправильном слове");
+    }
+
+    @Test
+    void testHint() {
+        game.checkWord("банан");
+        String hint = game.getHint();
+
+        assertNotNull(hint, "Подсказка не должна быть null, если словарь не пуст");
+
+        assertEquals(5, hint.length(), "Подсказка должна состоять из 5 букв");
+        assertTrue(hint.matches("^[а-я]{5}$"), "Подсказка должна содержать только русские буквы");
+
+        System.out.println("Тест пройден!");
     }
 }

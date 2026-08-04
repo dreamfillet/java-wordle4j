@@ -16,7 +16,6 @@ public class WordleDictionaryLoader {
                 new InputStreamReader(new FileInputStream(path), "UTF-8"))) {
 
             String line;
-            int count = 0;
 
             while ((line = reader.readLine()) != null) {
 

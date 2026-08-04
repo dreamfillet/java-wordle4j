@@ -7,8 +7,9 @@ import java.util.Random;
 
 public class WordleDictionary {
 
-    private List<String> words = new ArrayList<>();
-    private PrintWriter logger;
+    private final List<String> words = new ArrayList<>();
+
+    private final PrintWriter logger;
 
     WordleDictionary(PrintWriter logger) {
         this.logger = logger;
@@ -37,7 +38,7 @@ public class WordleDictionary {
         return words.size();
     }
 
-    private boolean isRussianWord(String word) {
+    public static boolean isRussianWord(String word) {
         if (word == null || word.isEmpty()) {
             return false;
         }

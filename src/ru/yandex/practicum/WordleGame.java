@@ -9,6 +9,11 @@ public class WordleGame {
 
     private String answer; //загаданное слово
     private int stepsMade; //количество сделанных попыток
+    private int stepsLeft;
+    public int getStepsLeft() {
+        return maxSteps - stepsMade;
+    }
+
     private int maxSteps = 6;
     private WordleDictionary dictionary; //ссылка на словарь
     private PrintWriter logger;
@@ -30,7 +35,6 @@ public class WordleGame {
         this.dictionary = dictionary;
         this.logger = logger;
         this.answer = secretWord;
-        this.maxSteps = 6;
         this.stepsMade = 0;
         this.history = new ArrayList<>();
 
